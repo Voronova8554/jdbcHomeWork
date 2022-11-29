@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         glue="com/library/stepDef",
         dryRun = false,
 
-        tags= "@us02"
+        tags= "@us01"
 
 
 

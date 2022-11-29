@@ -3,6 +3,10 @@ package com.library.utility;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class BrowserUtils {
@@ -48,4 +52,23 @@ public static void clickElement(WebElement element){
 public static void  verifyTitle(){
 
 }
+    public static List<String> getAllSelectOptions(WebElement element){
+
+        Select select=new Select(element);
+
+        return getElementsText(select.getOptions());
+    }
+    /**
+     * return a list of string from a list of elements
+     *
+     * @param list of webelements
+     * @return list of string
+     */
+    public static List<String> getElementsText(List<WebElement> list) {
+        List<String> elemTexts = new ArrayList<>();
+        for (WebElement el : list) {
+            elemTexts.add(el.getText());
+        }
+        return elemTexts;
+    }
 }
